@@ -9,6 +9,22 @@ public class Main {
         int[] newArray = new int[n];
         return newArray;
     }
+    static void smallToLarge(int[] arr ){
+        int temp =0 ;
+        for(int i=0;i< arr.length;i++){
+            for (int j=0;j<arr.length;j++){
+                if( (i!=j) && arr[i]<arr[j]){
+                    temp = arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+        for (int i : arr){
+            System.out.print(i + " ");
+        }
+
+    }
 
     public static void main(String[] args) {
 
@@ -21,10 +37,6 @@ public class Main {
             int in = element.nextInt();
             myArr[i] = in;
         }
-        Arrays.sort(myArr);
-        System.out.println("Sorted from smallest to largest version :");
-        for (int num : myArr){
-            System.out.print(num+ " ");
-        }
+        smallToLarge(myArr);
     }
 }
